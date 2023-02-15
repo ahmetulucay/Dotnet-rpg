@@ -75,7 +75,6 @@ public class CharacterService : ICharacterService
     public async Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(int id)
     {
         var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
-
         try
         {
             var character = characters.FirstOrDefault(c => c.Id == id);
@@ -91,7 +90,6 @@ public class CharacterService : ICharacterService
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
-
         return serviceResponse;
     }
 }
